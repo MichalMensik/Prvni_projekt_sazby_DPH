@@ -1,13 +1,13 @@
 package com.engeto.examples;
 
-public class VATRate {
-    String stateAbbreviation;
-    String state;
-    int fullRate;
-    int reducedRate;
-    boolean specialRate;
+public class VatRate {
+    private String stateAbbreviation;
+    private String state;
+    private int fullRate;
+    private double reducedRate;
+    private boolean specialRate;
 
-    public VATRate(String stateAbbreviation, String state, int fullRate, int reducedRate, boolean specialRate) {
+    public VatRate(String stateAbbreviation, String state, int fullRate, double reducedRate, boolean specialRate) {
         this.stateAbbreviation = stateAbbreviation;
         this.state = state;
         this.fullRate = fullRate;
@@ -39,11 +39,11 @@ public class VATRate {
         this.fullRate = fullRate;
     }
 
-    public int getReducedRate() {
+    public double getReducedRate() {
         return reducedRate;
     }
 
-    public void setReducedRate(int reducedRate) {
+    public void setReducedRate(double reducedRate) {
         this.reducedRate = reducedRate;
     }
 
@@ -58,12 +58,10 @@ public class VATRate {
 
     @Override
     public String toString() {
-        return "VATRate{" +
-                "stateAbbreviation='" + stateAbbreviation + '\'' +
-                ", state='" + state + '\'' +
-                ", fullRate=" + fullRate +
-                ", reducedRate=" + reducedRate +
-                ", specialRate=" + specialRate +
-                '}';
+        return getStateAbbreviation()
+                + " [" + state + "]"
+                + ": " + fullRate + " % ";
     }
+
+
 }
