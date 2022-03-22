@@ -55,13 +55,12 @@ public class VatRate {
         this.specialRate = specialRate;
     }
 
-
     @Override
     public String toString() {
         return getStateAbbreviation()
                 + " [" + state + "]"
                 + ": " + fullRate + " % ";
+        }
     }
 
 
-}

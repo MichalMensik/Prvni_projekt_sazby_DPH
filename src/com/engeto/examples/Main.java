@@ -1,5 +1,7 @@
 package com.engeto.examples;
 
+import java.util.List;
+
 public class Main {
 
     public static final String FILENAME = "vat-eu.csv";
@@ -9,16 +11,20 @@ public class Main {
         InputFile inputFiles = new InputFile();
         inputFiles.loadFromFile(FILENAME);
         for (VatRate vatRate : inputFiles.getAllInputFiles()) {
+
             System.out.println(vatRate);
-          }
+
+           }
 
         try {
             inputFiles.saveToFile(FILENAME2);
-        } catch (Exception e) {
+            System.out.println("==================");
+
+            } catch (Exception e) {
             e.printStackTrace();
         }
-    }
 
+    }
 }
 
 
